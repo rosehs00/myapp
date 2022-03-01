@@ -1,0 +1,14 @@
+apiVersion: skaffold/v2beta26
+kind: Config
+metadata:
+  name: nginx-pod
+build:
+  artifacts:
+  - image: rosehs00/skaffold-hhs
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+    - nginx-deploy.yaml
+    - nginx-svc.yaml
